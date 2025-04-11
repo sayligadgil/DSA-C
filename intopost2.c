@@ -48,8 +48,7 @@ int isOperator(char c) {
 
 // Function to check if a character is an operand
 int isOperand(char c) {
-    if(c!= isOperator);
-    return -1;  // Returns true if character is a number or letter
+    return (isalnum(c));  // Returns true if character is a number or letter
 }
 
 // Function to check precedence of operators
