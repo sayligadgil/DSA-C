@@ -14,7 +14,9 @@ typedef struct {
 void initStack(Stack *s) {
     s->top = -1;
 }
-
+int isempty(Stack *s) {
+return s->top==1;
+}
 // Function to push an element onto the stack
 void push(Stack *s, char c) {
     if (s->top < MAX - 1) {
@@ -46,13 +48,14 @@ int isOperator(char c) {
 
 // Function to check if a character is an operand
 int isOperand(char c) {
-    return (isalnum(c));  // Returns true if character is a number or letter
+    if(c! = isOperator)
+    return (char c);  // Returns true if character is a number or letter
 }
 
 // Function to check precedence of operators
 int precedence(char c) {
     if (c == '^') return 3;
-    if (c == '*' || c == '/') return 2;
+    if (c == '*' || c == '/'|| c == '%') return 2;
     if (c == '+' || c == '-') return 1;
     return 0;
 }
