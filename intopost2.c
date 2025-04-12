@@ -15,7 +15,7 @@ void initStack(Stack *s) {
     s->top = -1;
 }
 int isempty(Stack *s) {
-return s->top==1;
+return s->top = -1;
 }
 // Function to push an element onto the stack
 void push(Stack *s, char c) {
