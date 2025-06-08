@@ -9,20 +9,23 @@ void swap(int *a, int *b) {
 
 // Partition function
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // pivot element
-    int i = (low - 1);     // index of smaller element
+    int pivot = arr[low];
+    int i = low + 1;
+    int j = high;
 
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
+    while (i <= j) {
+        while (i <= high && arr[i] <= pivot)
             i++;
+        while (arr[j] > pivot)
+            j--;
+        if (i < j)
             swap(&arr[i], &arr[j]);
-        }
     }
 
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
+    swap(&arr[low], &arr[j]);  // Place pivot in correct position
+    return j;
 }
-
+ 
 // QuickSort function
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
