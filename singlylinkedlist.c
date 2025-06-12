@@ -105,6 +105,20 @@ struct Node* deleteAtFirst(struct Node* head){
         }
         return head;
     }
+int searchAndGetIndex(struct Node* head, int key) {
+        int index = 0;
+        struct Node* ptr = head;
+    
+        while (ptr != NULL) {
+            if (ptr->data == key) {
+                return index;  // Found it, return current index
+            }
+            ptr = ptr->next;
+            index++;
+        }
+    
+        return -1;  // Element not found
+    }
 int main()
 {
     struct Node* head = createNode(2);
@@ -135,7 +149,14 @@ int main()
    
     printf("linked list after deletion\n");
     linkedlistTraversal(head);
-   
+    int key = 4;
+    int index = searchAndGetIndex(head, key);
+
+    if (index != -1) {
+        printf("Element %d found at index %d\n", key, index);
+    } else {
+        printf("Element %d not found in the linked list.\n", key);
+    }
 
     free(head);
     free(second);
