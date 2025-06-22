@@ -89,7 +89,7 @@ int main() {
     printf("\nChoose Collision Resolution Technique:\n");
     printf("1. Linear Probing\n");
     printf("2. Quadratic Probing\n");
-    printf("3. Double Hashing (Rehashing)\n");
+    printf("3. Double Hashing\n");
     printf("Enter your choice (1-3): ");
     scanf("%d", &choice);
 
