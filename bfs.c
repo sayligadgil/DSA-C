@@ -50,34 +50,27 @@ void bfs(int startVertex, int n) {
 
 // Main Function
 int main() {
-    int n, edges, u, v, start;
+    int n, startVertex;
 
-    printf("Enter number of vertices: ");
+    printf("Enter the number of vertices: ");
     scanf("%d", &n);
 
-    printf("Enter number of edges: ");
-    scanf("%d", &edges);
-
-    // Initialize adjacency matrix and visited array
+    printf("Enter the adjacency matrix:\n");
     for (int i = 0; i < n; i++) {
-        visited[i] = 0;
         for (int j = 0; j < n; j++) {
-            adj[i][j] = 0;
+            scanf("%d", &adj[i][j]);
         }
     }
 
-    // Input the edges
-    printf("Enter edges (u v) format:\n");
-    for (int i = 0; i < edges; i++) {
-        scanf("%d%d", &u, &v);
-        adj[u][v] = 1;
-        adj[v][u] = 1; // For undirected graph. Remove for directed.
+    // Initialize visited array
+    for (int i = 0; i < n; i++) {
+        visited[i] = 0;
     }
 
-    printf("Enter starting vertex for BFS: ");
-    scanf("%d", &start);
+    printf("Enter the starting vertex for BFS: ");
+    scanf("%d", &startVertex);
 
-    bfs(start, n);
+    bfs(startVertex, n);
 
     return 0;
 }
