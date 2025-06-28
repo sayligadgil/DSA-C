@@ -44,34 +44,29 @@ void dfs(int start, int n) {
 }
 
 int main() {
-    int n, edges, u, v, start;
+    int n, startVertex;
 
-    printf("Enter number of vertices: ");
+    printf("Enter the number of vertices: ");
     scanf("%d", &n);
 
-    printf("Enter number of edges: ");
-    scanf("%d", &edges);
-
-    // Initialize
+    printf("Enter the adjacency matrix:\n");
     for (int i = 0; i < n; i++) {
-        visited[i] = 0;
         for (int j = 0; j < n; j++) {
-            adj[i][j] = 0;
+            scanf("%d", &adj[i][j]);
         }
     }
 
-    printf("Enter edges (u v):\n");
-    for (int i = 0; i < edges; i++) {
-        scanf("%d%d", &u, &v);
-        adj[u][v] = 1;
-        adj[v][u] = 1; // For undirected graph
+    // Initialize visited array
+    for (int i = 0; i < n; i++) {
+        visited[i] = 0;
     }
 
-    printf("Enter starting vertex: ");
-    scanf("%d", &start);
+    printf("Enter the starting vertex for DFS: ");
+    scanf("%d", &startVertex);
 
-    printf("DFS Traversal (non-recursive) starting from %d:\n", start);
-    dfs(start, n);
+    printf("DFS traversal starting from vertex %d: ", startVertex);
+    dfs(startVertex, n);
+    printf("\n");
 
     return 0;
 }
